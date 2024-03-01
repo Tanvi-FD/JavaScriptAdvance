@@ -36,13 +36,13 @@
         // A variable declared inside a function is only visible inside that function.
 
 
-        function local() {
-            var a = 10;
-            console.log(a);
+        // function local() {
+        //     let a = 10;
+        //     console.log(a);
             
-        }
-        local()
-        console.log(a);
+        // }
+        // local()
+        // console.log(a);
 
 
         // Outer variables 
@@ -62,12 +62,12 @@
 
         // while declaring a function we pass some parameters in the parenthesis (para1, para2)
 
-        // function twoNumber(a, b, c=12) {
-        //     console.log(a + b + c);
-        //     console.log(a);
-        // }
+        function twoNumber(a, b, c=12) {
+            console.log(a + b + c)/3;
+            console.log(a);
+        }
 
-        // twoNumber(4,6)
+        twoNumber(4,6)
         // twoNumber(8,9)
         // twoNumber(2,4)
 
