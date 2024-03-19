@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .yellow{
+            color: yellow;
+        }
+        .red{
+            color: red;
+        }
+        .green{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+   <p>Lorem ipsum dolor sit amet.</p>
+   <p>Lorem ipsum dolor sit amet.</p>
+   <p>Lorem ipsum dolor sit amet.</p>
+   <p>Lorem ipsum dolor sit amet.</p>
+   <p>Lorem ipsum dolor sit amet.</p>
+   <p>Lorem ipsum dolor sit amet.</p>
+   <p>Lorem ipsum dolor sit amet.</p>
+   <p>Lorem ipsum dolor sit amet.</p>
+
+    <script>
+       var para = document.querySelectorAll("p");
+       
+       console.log(para);
+
+        para.forEach(function(element,index){
+            var classListGrp = ["yellow","red","green"];
+            console.log(classListGrp);
+
+            element.classList.add(classListGrp[index%classListGrp.length]);
+        });
+        
+       
+        
+        
+    </script>
+</body>
+</html>

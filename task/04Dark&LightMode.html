@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark-light Mode</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+        h1{
+            font-size: 45px;
+            text-align: center;
+        }
+        img{
+            width: 40%;
+            height: auto;
+            align-items: center;
+            margin: 20px 30%;
+        }
+        p{
+            text-align: center;
+            font-size: 22px;
+        }
+        label{
+            position: absolute;
+            width: 45px;
+            height: 22px;
+            right: 20px;
+            top: 20px;
+            border: 2px solid;
+            border-radius: 20px;
+        }
+        label:before{
+            position: absolute;
+            content: "";
+            width: 20px;
+            height: 20px;
+            left: 1px;
+            top: 1px;
+            border-radius: 50%;
+            cursor: pointer;
+            background-color: black;
+            transition: 0.4s;
+        }
+        label.active:before{
+            left: 24px;
+            background-color: rgb(255, 253, 253);
+        }
+        body.night{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <label  id="dark-change"></label>
+    </header>
+    <section>
+        <h1>Dark & light Mode</h1>
+        <div class="respon">
+            <img src="../img/istockphoto-908945558-612x612.jpg" alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste tempore in ipsa officiis mollitia reprehenderit sapiente, at dignissimos optio esse. Lorem, 
+             ipsum dolor sit amet consectetur adipisicing elit. At, iure illo animi ea pariatur obcaecati quo corporis suscipit dolor porro, quas omnis voluptate 
+             recusandae temporibus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam quos fuga nostrum assumenda maxime sequi!
+
+        </p>
+        </div>
+    </section>
+
+    <script>
+        var content = document.getElementsByTagName("body")[0];
+        var darkMode = document.getElementById("dark-change");
+
+        darkMode.addEventListener("click", function (){
+            darkMode.classList.toggle('active');
+            content.classList.toggle('night');
+        });
+       
+    </script>
+</body>
+</html>

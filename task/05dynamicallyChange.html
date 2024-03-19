@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynamic Styling with Button Click</title>
+<style>
+  .dynamic-div {
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+</style>
+</head>
+<body>
+
+<div id="myDiv1" class="div">
+  This is div 1.
+</div>
+
+<div id="myDiv2" class="div">
+  This is div 2.
+</div>
+
+<button onclick="applyStylesToDiv1()">Apply Styles to Div 1</button>
+<button onclick="applyStylesToDiv2()">Apply Styles to Div 2</button>
+
+<script>
+  
+  function applyStylesToDiv1() {
+    const div1 = document.getElementById('myDiv1');
+    div1.style.color = 'black';
+    div1.style.backgroundColor = 'pink';
+    div1.style.position = 'absolute';
+    div1.style.left = '100px';
+    div1.style.top = '100px';
+    div1.style.width = '200px';
+    div1.style.height = '150px';
+    div1.style.textAlign = 'center';
+    div1.style.fontSize = '20px';
+    div1.style.border = '3px solid';
+  }
+
+  function applyStylesToDiv2() {
+    const div2 = document.getElementById('myDiv2');
+    div2.style.color = 'blue';
+    div2.style.backgroundColor = 'yellow';
+    div2.style.position = 'absolute';
+    div2.style.left = '300px';          
+    div2.style.top = '200px';
+    div2.style.width = '250px';
+    div2.style.height = '200px';
+    div2.style.textAlign = 'center';
+    div2.style.fontSize = '20px';
+    div2.style.border = '3px solid';
+  }
+</script>
+
+</body>
+</html>

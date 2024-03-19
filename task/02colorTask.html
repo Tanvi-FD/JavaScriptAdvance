@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Colors</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            position: relative;
+        }
+        .color{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            position: absolute;
+            left: 550px;
+            top: 20px;
+        }
+        .color div{
+            padding: 20px 20px;
+           box-shadow: 5px 5px black;
+            cursor: pointer;
+            border: 1px solid black;
+            color: white;
+        }
+        .color div:hover{
+            box-shadow: 0 10px 20px black;
+        }
+        .body div {
+            height: 100vh;
+            width: 100%;
+        }
+        .background img{
+            width: 80%;
+        }
+        .background img{
+            height: 750px;
+            width: 100%;
+            position: absolute;
+            bottom: 0px;
+        }
+    </style>
+</head>
+<body>
+   <header>
+    <div class="color">
+        <div style="background-color: rgb(29, 219, 196);">Aqua</div>
+        <div style="background-color: rgb(152, 25, 116);">pink</div>
+        <div style="background-color: greenyellow;">green</div>
+        <div style="background-color: darkblue;">blue</div>
+        <div style="background-color: orange;">orange</div>
+     </div>
+     <div class="body">
+         <div></div>
+     </div>
+     <div class="background">
+        <img src="../img/bg03.webp" alt="">
+     </div>
+   </header>
+
+
+    <script>
+       var allcolor = document.querySelectorAll(".color div")
+       console.log(allcolor);
+
+       allcolor.forEach(function(e){
+        var a = e.getAttribute("style")
+        console.log(a);
+
+        e.addEventListener("click",function(){
+            console.log(e);
+            
+            var allcolor = this.getAttribute("style")
+            console.log(allcolor);
+
+            var preview = document.querySelector(".body")
+            console.log(preview);
+
+            preview.setAttribute("style",allcolor)
+        })
+       })
+    </script>
+</body>
+</html>

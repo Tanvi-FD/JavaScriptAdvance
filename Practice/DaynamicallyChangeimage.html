@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .thumnail img{
+            height: 60px;
+            width: 60px;
+        }
+        .maincountainer{
+            height: 350px;
+            width: 350px;
+        }
+
+    </style>
+</head>
+<body>    <div class="thumnail">
+         <img src="../img/02SmartWatch.webp">
+         <img src="../img/03SmartWatch.webp">
+         <img src="../img/04SmartWatch.webp">
+         <img src="../img/05SmartWatch.webp">
+         <img src="../img/06SmartWatch.webp">
+
+    </div>
+
+    <div class="maincountainer">
+
+        <img src="../img/01SmartWatch.webp">
+
+        </div>
+
+        <script>
+
+                var allimg = document.querySelectorAll(".thumnail img");
+                console.log(allimg);
+
+                allimg.forEach(function (img) {
+                    img.addEventListener("click",function(){
+
+                      //  ger img src from selected element
+                      var mypath = this.getAttribute("src")
+                      console.log(mypath);
+
+
+                      var preview = document.querySelector(".maincountainer img");
+                      console.log(preview);
+
+                      //set preview get src image
+                      preview.setAttribute("src",mypath);
+                    })
+                })
+      </script>
+    
+</body>
+</html>

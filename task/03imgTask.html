@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Image</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .product-small-img img{
+            height: 92px;
+            margin: 10px 0;
+            cursor: pointer;
+            display: block;
+            opacity: 0.6;
+        }
+        .product-small-img img:hover{
+            opacity: 1;
+        }
+        .product-small-img{
+            float: left;
+        }
+        .product{
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            position: absolute;
+        }
+        .img-container img{
+            height: 600px;
+        }
+        .img-container{
+            float: right;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="product">
+        <div class="product-small-img">
+            <img src="../img/small01.webp" onclick="myFunction()">
+            <img src="../img/small02.webp" onclick="myFunction()">
+            <img src="../img/small03.webp" onclick="myFunction()">
+            <img src="../img/small04.webp" onclick="myFunction()">
+            <img src="../img/small05.webp" onclick="myFunction()">
+            <img src="../img/small06.webp" onclick="myFunction()">
+
+        </div>
+
+        <div class="img-container">
+            <img id="imgbox" src="../img/main01.webp">
+        </div>
+    </div>
+
+
+
+
+    <script>
+         var allimg = document.querySelectorAll(".product-small-img img");
+                console.log(allimg);
+
+                allimg.forEach(function (img) {
+                    img.addEventListener("click",function(){
+
+                      //  ger img src from selected element
+                      var mypath = this.getAttribute("src")
+                      console.log(mypath);
+
+
+                      var preview = document.querySelector(".img-container img");
+                      console.log(preview);
+
+                      //set preview get src image
+                      preview.setAttribute("src",mypath);
+                    })
+                })
+    </script>
+</body>
+</html>

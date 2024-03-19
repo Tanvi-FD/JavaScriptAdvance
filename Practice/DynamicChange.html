@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Change with JavaScript</title>
+    <style>
+        .myclass{
+            background-color: blueviolet;
+            color: white;
+            height: 220px;
+            width: 420px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<section>
+    <div>
+    <h1>hey welcome to JavaScript</h1>
+    <button id="mybtn">Click Here</button>
+    </div>
+</section>
+
+
+    <script>
+
+        var btn = document.getElementById("mybtn");
+
+        btn.addEventListener("click",function(){
+
+        var myh1 = document.querySelector("h1");
+        console.log(myh1);
+
+        myh1.classList.add("myclass");
+
+        // myh1.style.color = "red";
+        
+         console.log(myh1);
+            
+        });
+    
+
+       
+    </script>
+    
+</body>
+</html>
