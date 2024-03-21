@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tom & jerry</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        .center{
+            width: 25%;
+            height: 40%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .btn{
+            padding: 15px;
+            background-color: blueviolet;
+            border-radius: 20px;
+        }
+      
+    </style>
+</head>
+<body>
+    <div class="main">
+        <img id="bulb" class="center" src="../img/tom_catch.png">
+        <button id="togglebtn" class="center btn">Turn On</button>
+    </div>
+   
+
+
+
+    <script>
+        let btn = document.getElementById("togglebtn");
+
+        let bulb = document.getElementById("bulb");
+
+        btn.addEventListener('click', toggleBulb);
+
+        function toggleBulb(e){
+            if (btn.textContent. includes('Catch')){
+                bulb.src = "./img/tom_catch.png";
+                btn.textContent = "Catch Tom";
+            }
+            else{
+                bulb.src = "../img/jerryRun.png";
+                btn.textContent = "Run jerry";
+            }
+        }
+    </script>
+</body>
+</html>

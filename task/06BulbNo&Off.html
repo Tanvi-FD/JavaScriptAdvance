@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <img src="../img/pngwing.com (4).png" width="200px" id="Bulb" alt="">
+    <!-- <img src="../img/pngwing.com (4).png" alt="">
+    <img src="../img/pngwing.com (5).png" alt=""> -->
+    <br>
+    <button id="bulbon">Turn On Bulb</button>
+    <button id="bulboff">Turn Off Bulb</button>
+    <script>
+        let ImageData = document.getElementById('Bulb');
+        document.getElementById("bulbon").addEventListener("click", function () {
+            ImageData.src="../img/pngwing.com (5).png";
+            ImageData.style.width="150px";
+        })
+        document.getElementById("bulboff").addEventListener("click", function () {
+            ImageData.src="../img/pngwing.com (4).png";
+            ImageData.style.width="150px";
+            // ImageData.style.height="150px"
+        })
+
+    </script>
+</body>
+
+</html>

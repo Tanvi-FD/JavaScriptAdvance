@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .subcontainer .que{
+            background-color: purple;
+            color: white;
+        }
+        .subcontainer .ans{
+            background-color: plum;
+            color: black;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="maincontainer">
+
+        <div class="subcontainer">
+            <div class="que">
+                <h1>1. Lorem ipsum dolor sit amet.?</h1>
+            </div>
+            <div class="ans">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam suscipit eligendi ex iure deleniti mollitia!</p>
+            </div>
+        </div>
+
+        <div class="subcontainer">
+            <div class="que">
+                <h1>2. Lorem ipsum dolor sit amet.?</h1>
+            </div>
+            <div class="ans">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam suscipit eligendi ex iure deleniti mollitia!</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        let myque = document.querySelectorAll(".subcontainer .que");
+        console.log(myque);
+
+        myque.forEach(function(que){
+            console.log(que);
+
+            que.addEventListener("click",function(){
+                console.log("clicked");
+
+                let ans = this.nextElementSibling;
+                console.log(ans);
+
+                if(ans.style.display == "block")
+                {
+                    ans.style.display = "none";
+                }
+                else{
+                    ans.style.display = "block"
+                }
+            })
+        })
+    </script>
+</body>
+</html>
