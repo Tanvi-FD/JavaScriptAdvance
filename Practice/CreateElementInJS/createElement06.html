@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="linkid" placeholder="enter here">
+    <button onclick="linkvalue()">add</button>
+    <script>
+       
+
+        function linkvalue(){
+           let linkvalue = document.getElementById("linkid").value;
+
+            console.log(linkvalue);     // contain input box
+
+            let link = linkvalue.value;
+
+            console.log(link);    //  contain input box value
+
+        let a = document.createElement("a");
+
+        a.textContent = "link here";
+
+        a.setAttribute("href", linkvalue);
+
+        document.body.append(a)
+        }
+
+        
+
+
+    </script>
+</body>
+</html>

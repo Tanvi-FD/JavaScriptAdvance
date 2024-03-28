@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamically Change Colorbox</title>
+
+    <style>
+        .color{
+            margin-top: 20px;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        let input = document.createElement("input");
+
+        input.setAttribute("type","text");
+        input.setAttribute("id","inputid");
+        input.setAttribute("placeholder","Enter your color")
+        document.body.append(input)
+
+        console.log(input);
+
+        let button = document.createElement("button");
+
+               button.textContent = "Change Color"
+               document.body.append(button)
+
+            console.log(button);
+          
+
+            button.addEventListener("click",function(){
+        let div = document.createElement("div");
+        div.setAttribute("class","color");
+    
+        div.className = "color"
+
+       div.style.backgroundColor = input.value
+       input.value=""
+
+        document.body.append(div)
+        console.log(div);
+
+        
+
+    })
+    </script>
+</body>
+</html>
