@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .color{
+            height: 300px;
+            width: 300px;
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <div class="color"></div>
+
+    <script>
+        let div = document.querySelector(".color");
+
+        div.addEventListener("mouseover",function(){
+            div.style.backgroundColor = "pink"
+            div.style.border = "2px solid black"
+
+        })
+        div.addEventListener("mouseout",function(){
+            div.style.backgroundColor = "purple"
+            
+        })
+    </script>
+</body>
+</html>
