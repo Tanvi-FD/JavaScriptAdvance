@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <input type="text" id="Nameid" placeholder="Name" />
+        <button id="btnAdd">Add</button>
+        <ul id="myul"></ul>
+        <script>
+          let name = document.getElementById("Nameid");
+          console.log(name.value);
+    
+          let obj = {react : "redux", node : "express", dart : "flutter", python : "django"};
+          
+          document.getElementById("btnAdd").addEventListener("click", function () {
+            for (var key in obj) {
+              let li = document.createElement("li");
+    
+              if (name.value == key) {
+                li.textContent = obj[key];
+                document.getElementById("myul").append(li);
+              }
+            }
+          });
+        </script>
+     
+</body>
+</html>

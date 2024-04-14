@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="objToJson()">convert object to json</button>
+    <button onclick="JsonToObject()">convert json to object</button>
+
+    <script>
+        function objToJson(){
+            var obj = {name : "riya",subject : "mern",book_price : 788.99};
+
+           console.log(obj);
+
+           let JsonOutput = JSON.stringify(obj);
+           console.log(JsonOutput);
+        }
+
+        function JsonToObject(){
+            var jsondata = JSON.stringify({name : "riya",subject : "mern",book_price : 788.99});
+            console.log("JSON :",jsondata);
+
+            var js_obj = JSON.parse(jsondata);
+            console.log("OBJECT :",js_obj);
+        }
+    </script>
+</body>
+</html>

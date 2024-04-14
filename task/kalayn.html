@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>kALYAN</title>
+    <style>
+     
+      .container {
+        background-color: navy;
+        width: 100% !important;
+        height: 100%;
+        padding: 0 !important;
+      }
+      .wrap {
+        width: 100%;
+        background-color: paleturquoise;
+        color: black;
+        box-shadow: rgba(224, 218, 218, 0.84) 1px 2px 15px;
+        border-radius: 10px;
+      }
+      .disscount-card {
+        border: 2px solid purple;
+        background-color: rgb(241, 195, 241)!important;
+        color: navy !important;
+      }
+
+      form label {
+        color: black;
+      }
+    </style>
+    <!-- BOOTSRAP CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  </head>
+  <body>
+    <div class="container p-4 d-flex justify-content-end">
+      <div class="d-flex wrap flex-column p-4">
+        <form class="row g-3 w-60">
+          <div class="col-md-4">
+            <label for="inputEmail4" class="form-label">Name</label>
+            <input type="text" class="form-control" id="nameid" placeholder="Enter Your Name" />
+          </div>
+          <div class="col-md-4">
+            <label for="genderid" class="form-label">Gender</label>
+            <select id="genderid" class="form-select">
+              <option selected>Male</option>
+              <option>Female</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label for="inputState" class="form-label">Age</label>
+            <input type="number" class="form-control" id="ageid" placeholder="Enter Your age" />
+          </div>
+          <div class="col-md-6">
+            <label for="product" class="form-label">Product Type</label>
+            <select id="productid" class="form-select">
+              <option>Earing</option>
+              <option>Ring</option>
+              <option>Engagment Ring</option>
+              <option>Choker</option>
+              <option>Bangle</option>
+              <option>Necklaces</option>
+              <option>Pendant</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="inputState" class="form-label">Product Gram</label>
+            <input type="number" class="form-control" id="gramid" placeholder="Product Gram" />
+          </div>
+          <div class="col-md-6">
+            <label for="inputState" class="form-label"> current Gold price</label>
+            <input type="number" class="form-control" id="currentGoldId" placeholder="current gold price" />
+          </div>
+          <div class="col-md-6">
+            <label for="inputState" class="form-label"> Total Gold price </label>
+            <input type="number" class="form-control" id="totalgold" placeholder="total gold price" />
+          </div>
+          
+        </form>
+
+        <!--  -->
+        <div class="card mt-5" style="width: 100%">
+          <div class="card-body">
+            <h5 class="card-title" id="singleM">Making Charges (1 gram) : 845</h5>
+            <!-- <input type="number" placeholder="total making charging" id="totalmaking" class="form-control" /> -->
+            <h5 class="card-title fs-3" id="totalmaking">Total Making charges:</h5>
+            <h5 class="card-title fs-3" id="total_ammount">Total:</h5>
+          </div>
+        </div>
+        <!--  -->
+        <div class="d-flex justify-content-center align-items-center">
+          <div class="card mt-5 p-2 text-center border-2 border-danger disscount-card" style="width: 70%">
+            <div class="card-body">
+              <h5 class="h6" id="singleM">Your Disscount On the Basis of purchase</h5>
+              <!-- <input type="number" placeholder="total making charging" id="totalmaking" class="form-control" /> -->
+              <h5 class="card-title" id="disscountId"></h5>
+              <h5 class="card-title" id="saved"></h5>
+              <!-- <h5 class="card-title" id="total_ammount">Total:</h5> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOOTSRAP JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- script starts here -->
+    <script>
+      let name = document.getElementById("nameid");
+      let gender = document.getElementById("genderid");
+      let age = document.getElementById("ageid");
+      let product = document.getElementById("productid");
+      let grams = document.getElementById("gramid");
+      let currentGold = document.getElementById("currentGoldId");
+      let totalgoldprice = document.getElementById("totalgold");
+      let onegramMakingcharge = document.getElementById("singleM");
+      let totalMakingcharges = document.getElementById("totalmaking");
+      let totalAmmount = document.getElementById("total_ammount");
+      let disscount = document.getElementById("disscountId");
+      let savedRs = document.getElementById("saved");
+      currentGold.value = 5752;
+
+      function checkout(e) {
+        // total gold price
+        totalgoldprice.value = currentGold.value * grams.value;
+        e.preventDefault();
+
+        // total making cahrges
+        onegramMakingcharge.value = 825;
+
+        printTotal = onegramMakingcharge.value * grams.value;
+        totalMakingcharges.innerText = "Total Making charges:" + onegramMakingcharge.value * grams.value;
+
+        // total ammount
+        Totalprice = parseInt(printTotal) + parseInt(totalgoldprice.value);
+        console.log(Totalprice);
+        totalAmmount.textContent = "Total ammount :" + Totalprice;
+
+        if (gender.value == "Male" && age.value > 50) {
+          // 1000-100000
+          if (Totalprice > 10000 && Totalprice < 100000) {
+            disscount.innerHTML = "20% Disscount Is applied";
+            let savedDiscount = parseInt((totalgoldprice.value * 20) / 100);
+            savedRs.innerHTML = "you Saved RS:" + savedDiscount;
+          }
+          // 100000-200000
+          if (Totalprice > 100000 && Totalprice < 200000) {
+            disscount.innerHTML = "30% Disscount Is applied";
+            let savedDiscount = parseInt((totalgoldprice.value * 30) / 100);
+            savedRs.innerHTML = "you Saved RS:" + savedDiscount;
+          }
+          // 200000-250000
+          if (Totalprice > 200000 && Totalprice < 250000) {
+            disscount.innerHTML = "35% Disscount Is applied";
+            let savedDiscount = parseInt((totalgoldprice.value * 35) / 100);
+            savedRs.innerHTML = "you Saved RS:" + savedDiscount;
+          }
+        }
+
+        //  male <50
+
+        if (gender.value == "Male" && age.value < 50) {
+          // 1000-100000
+          if (Totalprice > 10000 && Totalprice < 100000) {
+            disscount.innerHTML = "10% Disscount Is applied";
+            let savedDiscount = parseInt((totalgoldprice.value * 10) / 100);
+            savedRs.innerHTML = "you Saved RS:" + savedDiscount;
+          }
+          // 100000-200000
+          if (Totalprice > 100000 && Totalprice < 200000) {
+            disscount.innerHTML = "20% Disscount Is applied";
+            let savedDiscount = parseInt((totalgoldprice.value * 20) / 100);
+            savedRs.innerHTML = "you Saved RS:" + savedDiscount;
+          }
+          // 200000-250000
+          if (Totalprice > 200000 && Totalprice < 250000) {
+            disscount.innerHTML = "25% Disscount Is applied";
+            let savedDiscount = parseInt((totalgoldprice.value * 25) / 100);
+            savedRs.innerHTML = "you Saved RS:" + savedDiscount;
+          }
+        }
+
+        // ///////////female
+
+        if (gender.value == "Female" && age.value > 50) {
+          // 1000-100000
+          if (Totalprice > 10000 && Totalprice < 100000) {
+            disscount.innerHTML = "20% Disscount Is applied";
+            let savedDiscount = parseInt((totalgoldprice.value * 20) / 100);
+            savedRs.innerHTML = "you Saved RS:" + savedDiscount;
+          }
+          // 100000-200000
+          if (Totalprice > 100000 && Totalprice < 200000) {
+            disscount.innerHTML = "30% Disscount Is applied";
+            let savedDiscount = parseInt((totalgoldprice.value * 30) / 100);
+            savedRs.innerHTML = "you Saved RS:" + savedDiscount;
+          }
+          // 200000-250000
+          if (Totalprice > 200000 && Totalprice < 250000) {
+            disscount.innerHTML = "35% Disscount Is applied";
+            let savedDiscount = parseInt((totalgoldprice.value * 35) / 100);
+            savedRs.innerHTML = "you Saved RS:" + savedDiscount;
+          }
+        }
+
+        //  female <50
+
+        if (gender.value == "Female" && age.value < 50) {
+          // 1000-100000
+          if (Totalprice > 10000 && Totalprice < 100000) {
+            disscount.innerHTML = "10% Disscount Is applied";
+            let savedDiscount = parseInt((totalgoldprice.value * 10) / 100);
+            savedRs.innerHTML = "you Saved RS:" + savedDiscount;
+          }
+          // 100000-200000
+          if (Totalprice > 100000 && Totalprice < 200000) {
+            disscount.innerHTML = "20% Disscount Is applied";
+            let savedDiscount = parseInt((totalgoldprice.value * 20) / 100);
+            savedRs.innerHTML = "you Saved RS:" + savedDiscount;
+          }
+          // 200000-250000
+          if (Totalprice > 200000 && Totalprice < 250000) {
+            disscount.innerHTML = "25% Disscount Is applied";
+            let savedDiscount = parseInt((totalgoldprice.value * 25) / 100);
+            savedRs.innerHTML = "you Saved RS:" + savedDiscount;
+          }
+        }
+      }
+
+      window.addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+          checkout(event);
+        }
+      });
+    </script>
+  </body>
+</html>

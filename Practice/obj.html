@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="keyid" placeholder="key value">
+    <input type="text" id="valueid" placeholder="key value">
+
+    <button onclick="savedata()">save</button>
+
+    <script>
+
+    let obj = [];
+
+    function savedata(){
+        
+    let k = document.getElementById("keyid")
+    let v = document.getElementById("valueid")
+
+    obj[k.value] = v.value;
+    console.log(obj);
+
+    k.value = ""
+    v.value = ""
+}        
+     
+    </script>
+    
+</body>
+</html>

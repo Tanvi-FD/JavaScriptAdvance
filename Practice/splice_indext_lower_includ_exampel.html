@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="findid" placeholder="type" />
+    <input type="text" id="replaceid" placeholder="type" />
+    <button onclick="applyChange()">click</button>
+
+
+    <ul id="myul">
+
+    </ul>
+    <script>
+
+      let subjectlist = ["html", "css", "js", "bootstrap", "jquery"];
+
+      let ul = document.getElementById("myul");
+
+      function displayArray() {
+
+        ul.innerHTML = "";
+
+        subjectlist.forEach(function (subject) {
+
+          let li = document.createElement("li");
+
+          li.textContent = subject;
+
+          ul.append(li);
+        });
+      }
+
+      displayArray();
+
+      function applyChange() {
+
+        let fineElement = document.getElementById("findid").value;
+
+        let replaceElement = document.getElementById("replaceid").value;
+
+        if (subjectlist.includes(fineElement.toLowerCase())) {
+
+          let start_index = subjectlist.indexOf(fineElement.toLowerCase());
+
+          subjectlist.splice(start_index, 1, replaceElement);
+          
+          displayArray();
+        }
+      }
+    </script>
+  </body>
+</html>
