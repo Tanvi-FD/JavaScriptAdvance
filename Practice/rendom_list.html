@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="game()">clik</button>
+
+    <script>
+        let mysubject = ["c++","java","paython","js","html","css"];
+
+        function game(){
+            let index = Math.floor(Math.random() * mysubject.length);
+
+            console.log(index);
+            console.log(mysubject[index]);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Guess number between 1 - 100</h3>
+    <input type="number" id="numberid" placeholder="Enter your Guess number" name="number"/>
+    <button onclick="game()">submit</button>
+    <h2 id="hint"></h2>
+
+
+    <script>
+        let computer_guess = Math.floor(Math.random()*100)+1;
+
+        function game(){
+            let userNumber = document.getElementById("numberid");
+
+            if(userNumber.value > computer_guess){
+                document.getElementById("hint").textContent = "HINT : Guess lower number";
+            }
+            else if(userNumber.value < computer_guess){
+                document.getElementById("hint").textContent = "HINT : Guess upper number";
+            }
+            else{
+                document.getElementById("hint").textContent = "RIGHT GUESS !!";
+                document.getElementById("hint").style.backgroundColor = "pink";
+                document.getElementById("hint").style.color = "black";
+            }
+        }
+    </script>
+</body>
+</html>

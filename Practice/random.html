@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="mybutton">Clik</button>
+
+   <script>
+    var btn = document.getElementById("mybutton");
+
+    btn.addEventListener("click",function(){
+        var rendomNumber =Math.floor(Math.rendom()*100)+1;
+        console.log(rendomNumber);
+    })
+   </script> 
+</body>
+</html>
